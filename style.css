@@ -1,0 +1,103 @@
+*{
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+   font-family: Arial, Helvetica, sans-serif;
+   transition: all 1s ease;
+}
+.container{
+   width: 100vw;
+   height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+}
+.container h1{
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 50px;
+   margin-bottom: 40px;
+}
+.cells{
+    overflow: hidden;
+   height: 300px;
+   width: 300px;
+   display: grid;
+   grid-template-rows: repeat(3,1fr);
+   grid-template-columns: repeat(3,1fr);
+   position: relative;
+}
+.cell{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 60px;
+   font-weight: 300;
+   border: 1px solid black;
+}
+.cell:nth-child(n+1){
+   border-top: none;
+}
+.cell:nth-child(n+2){
+   border-left: none;
+}
+.cell:nth-child(n+8){
+   border-bottom: none;
+}
+.cell:nth-child(4),
+.cell:nth-child(7),
+.cell:nth-child(10)
+{
+   border-right: none;
+}
+
+.container table{
+   border: 1px solid black;
+}
+.container table tr{
+   border: 1px solid black;
+}
+.container .players{
+   margin-top: 30px;
+   background: #B53B3B;
+   padding: 10px 20px;
+}
+.container .players .player{
+   font-size:22px;
+   letter-spacing: 3px;
+}
+.drop{
+   width: 100%;
+   height: 40px;
+   background: #2C3593;
+   color: #ffffff;
+   position: absolute;
+   top: 0;
+   transform: translateY(-40px);
+   transition: all .4s ease-out;
+   padding: 8px;
+   font-size: 20px;
+}
+.btn{
+   margin-bottom: 30px;
+   padding: 20px 35px;
+   border: none;
+   outline: none;
+   border-radius: 8px;
+   background: #2C3593;
+   color: white;
+}
+.cells.disabled{
+   background: #666E73;
+   pointer-events: none;
+}
+.line{
+    left: 0px;
+    top:150px;
+    transform: rotate(45deg);
+    width: 300px;
+    position: absolute;
+    height: 1.5px;
+    background: #5361FF;
+    display: none;
+}
