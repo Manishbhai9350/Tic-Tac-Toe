@@ -8,7 +8,7 @@ const drop = document.querySelector(".drop")
 
 //const gameoversound = new Audio('/GAMES/Tic Tac Toe - GAME/sounds/gameover.mp3')
 const resetBtn = document.querySelector(".restart");
-const line = dc.qs('.line')
+const line = document.querySelector('.line')
 let player1_point = 0;
 let player2_point = 0;
 
@@ -73,7 +73,7 @@ const wins = [
 
 // FUNCTION TO ROTATE LINES 
 function rotateline(index) {
-    dc.log(index)
+    // (index)
     line.style.display = "block";
     line.style.transform = `
     rotate(${linerotate[index].rotate})
@@ -153,7 +153,7 @@ const checkWin = () => {
             showPoint();
             disableCell();
             rotateline(i)
-            gameoversound.play()
+            // gameoversound.play()
             return true;
         }
     }
@@ -199,8 +199,8 @@ const start = () => {
     // ADDING EVENT LISTNER TO ALL CELLS USING FOR EACH
     cells.forEach(cell => {
         cell.addEventListener("click", (e) => {
-        //    dc.log('clicked')
-                const click = new Audio('/GAMES/Tic Tac Toe - GAME/sounds/ting.mp3')
+        //    console.log('clicked')
+                // const click = new Audio('/GAMES/Tic Tac Toe - GAME/sounds/ting.mp3')
              // click.play()
          
             if (e.target.textContent == "") {
